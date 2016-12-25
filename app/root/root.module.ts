@@ -8,6 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 // import { EntityComponent } from './../entity/entity.component';
 import { RootComponent } from './root.component';
 import { EntityModule } from './../entity/entity.module';
+import { VideoModule } from './../video/video.module';
+import { NavbarComponent } from './../navbar/navbar.component';
 
 @NgModule({
     imports: [
@@ -15,10 +17,12 @@ import { EntityModule } from './../entity/entity.module';
       HttpModule,
       BrowserModule,
       EntityModule,
+      VideoModule,
       routing
     ],
     declarations: [
-      RootComponent
+      RootComponent,
+      NavbarComponent
     ],
     bootstrap: [RootComponent]
 })
