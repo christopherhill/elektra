@@ -11,6 +11,7 @@ import { EntityModule } from './../entity/entity.module';
 import { VideoModule } from './../video/video.module';
 import { NavbarComponent } from './../navbar/navbar.component';
 import { APIModule } from './../../shared/api/api.module';
+import { SafeUrlPipe } from './../../shared/safe-url.pipe';
 
 @NgModule({
     imports: [

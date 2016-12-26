@@ -9,6 +9,8 @@ import { VideoComponent } from './video.component';
 import { YouTubeAPI } from './youtube.service';
 import { YouTubeVideoComponent } from './youtube.component';
 // why is it necessary to import BrowserModule again?
+import { SafeUrlPipe } from './../../shared/safe-url.pipe';
+
 @NgModule({
     imports: [
       routing,
@@ -16,7 +18,8 @@ import { YouTubeVideoComponent } from './youtube.component';
     ],
     declarations: [
       VideoComponent,
-      YouTubeVideoComponent
+      YouTubeVideoComponent,
+      SafeUrlPipe
     ],
     providers: [
       YouTubeAPI

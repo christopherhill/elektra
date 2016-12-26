@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Wolfgang Amadeus Mozart",
+        "search": "Mozart"
+    },
+    {
+        "name": "Johann Sebastian Bach",
+        "search": "Bach"
+    },
+    {
+        "name": "Richard Strauss",
+        "search": "Richard Strauss"
+    },
+    {
+        "name": "Dmitri Shostakovich",
+        "search": "Shostakovich"
+    },
+    {
+        "name": "Ottorino Respighi",
+        "search": "Respighi"
+    },
+    {
+        "name": "Philip Glass",
+        "search": "Philip Glass"
+    },
+    {
+        "name": "Bernard Herrmann",
+        "search": "Bernard Herrmann"
+    }
+]
