@@ -6,13 +6,20 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing } from './video.routes';
 import { VideoComponent } from './video.component';
-
+import { YouTubeAPI } from './youtube.service';
+import { YouTubeVideoComponent } from './youtube.component';
+// why is it necessary to import BrowserModule again?
 @NgModule({
     imports: [
-      routing
+      routing,
+      BrowserModule
     ],
     declarations: [
-      VideoComponent
+      VideoComponent,
+      YouTubeVideoComponent
+    ],
+    providers: [
+      YouTubeAPI
     ],
     bootstrap: [VideoComponent]
 })

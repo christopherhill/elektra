@@ -1,6 +1,7 @@
 <br><br>
 
 <div class="fluffy-header">
-  <h2>VIDEO</h2>
-  <img src="{{logo}}" />
+  <div *ngFor="let video of videos">
+    <youtube-video videoId="{{video.id}}"></youtube-video>
+  </div>
 </div>

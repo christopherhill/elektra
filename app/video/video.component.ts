@@ -1,9 +1,8 @@
 'use strict';
 
 import { Input, Component, EventEmitter } from '@angular/core';
-import './youtube.auth';
+import { YouTubeAPI } from './youtube.service';
 
-var logo = require('./../../assets/logo.svg');
 
 @Component({
   selector: 'elektra-video',
@@ -12,18 +11,17 @@ var logo = require('./../../assets/logo.svg');
 
 export class VideoComponent {
 
-  @Input() logo = logo;
+  @Input() videos: any;
 
 	constructor(
+    public yt: YouTubeAPI
 	) {}
 
-  auth() {
-  }
-
-	ngOnDestroy() {
-	}
-
 	ngOnInit() {
+    this.yt.search('Carlos Kleiber').subscribe((data: any) => {
+      console.log('data', data);
+      this.videos = this.yt.extractIds(data.items);
+    });
   }
 
 }

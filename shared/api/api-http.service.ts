@@ -25,11 +25,13 @@ export class APIHttpService extends Http {
   }
 
   get(url: string, options?: RequestOptionsArgs): Observable<Response> {
-    console.log('get...');
+    console.log('get...', url);
     this.channel.subject('request').next({ progress: true });
-    return super.get(url, options).catch(res => {
-      return this.channel.subject('request').next({ progress: false });
-    });
+    return super.get(url, options)
+       .map(res => res.json())
+       .catch(res => {
+          return this.channel.subject('request').next({ progress: false });
+       });
   };
 
   post(url: string, options?: RequestOptionsArgs): Observable<Response> {

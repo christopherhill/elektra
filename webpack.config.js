@@ -15,7 +15,7 @@ var order = function(list) {
 
 module.exports = {
 
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-eval-source-mapf',
   entry: {
     vendor: './app/vendor.ts',
     polyfills: './app/polyfills.ts',

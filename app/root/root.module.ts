@@ -10,14 +10,15 @@ import { RootComponent } from './root.component';
 import { EntityModule } from './../entity/entity.module';
 import { VideoModule } from './../video/video.module';
 import { NavbarComponent } from './../navbar/navbar.component';
+import { APIModule } from './../../shared/api/api.module';
 
 @NgModule({
     imports: [
       FormsModule,
-      HttpModule,
       BrowserModule,
       EntityModule,
       VideoModule,
+      APIModule,
       routing
     ],
     declarations: [
