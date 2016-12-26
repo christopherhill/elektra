@@ -34,5 +34,17 @@
     {
         "name": "Christian Thielemann",
         "search": "Christian Thielemann"
-    }
+    },
+		{
+			"name": "Claudio Abbado",
+			"search": "Claudio Abbado"
+		},
+		{
+			"name": "Sir Simon Rattle",
+			"search": "Simon Rattle"
+		},
+		{
+			"name": "Herbert von Karajan",
+			"search": "Herbert von Karajan"
+		}
 ]

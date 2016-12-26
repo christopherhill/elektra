@@ -16,8 +16,9 @@ export class YouTubeAPI {
     return this.http.get(`${URI}?q=${query}&key=${API_KEY}&part=snippet`);
   }
 
-  public extractIds(collection) {
-   return collection.map(entry => entry.id.videoId);
+  // parse relevant info
+  public extract(collection) {
+   return collection.map((entry) => { return { id: entry.id.videoId, title: entry.snippet.title }});
   }
 
 };

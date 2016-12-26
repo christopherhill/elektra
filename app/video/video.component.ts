@@ -18,7 +18,7 @@ export class VideoComponent {
 	constructor(
     public yt: YouTubeAPI
 	) {
-    this.search = 'Richard Strauss Alpensinfonie';
+    this.search = 'Richard Strauss Elektra';
     this.channel = Rxmq.channel('search');
   }
 
@@ -35,7 +35,7 @@ export class VideoComponent {
   getSearchResults(query: string) {
     this.yt.search(query).subscribe((data: any) => {
       console.log('data', data);
-      this.videos = this.yt.extractIds(data.items);
+      this.videos = this.yt.extract(data.items);
       console.log('set: ', this.videos)
     });
   }

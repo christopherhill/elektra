@@ -13,6 +13,9 @@ import { NavbarComponent } from './../navbar/navbar.component';
 import { APIModule } from './../../shared/api/api.module';
 import { SafeUrlPipe } from './../../shared/safe-url.pipe';
 
+import { DropdownModule } from 'ng2-bootstrap/dropdown';
+import { TypeaheadModule } from 'ng2-bootstrap/typeahead';
+
 @NgModule({
     imports: [
       FormsModule,
@@ -20,7 +23,9 @@ import { SafeUrlPipe } from './../../shared/safe-url.pipe';
       EntityModule,
       VideoModule,
       APIModule,
-      routing
+      routing,
+      DropdownModule.forRoot(),
+      TypeaheadModule.forRoot()
     ],
     declarations: [
       RootComponent,

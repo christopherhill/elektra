@@ -1,8 +1,16 @@
-<br><br><br>
-<h2>Results for {{search}}</h2>
+<br><br><br><br>
+<p class="lead text-md-center">
+	You searched for {{search}}. Here's what we were able to find.
+</p>
+<br>
 <div class="container-fluid">
-		<div class="col-md-6" *ngFor="let id of videos">
-			<youtube-video videoId="{{id}}"></youtube-video>
-			<p>Searching for {{search}}.</p>
+		<div class="col-md-6" *ngFor="let video of videos">
+			<!--<button class="btn btn-md"><i class="fa fa-facebook-official fa-lg"></i></div>
+			<i class="fa fa-thumbs-o-up fa-lg"></i>
+			<i class="fa fa-thumbs-o-down fa-lg"></i>
+			<i class="fa fa-trash-o fa-lg"></i>-->
+
+			<youtube-video videoId="{{video.id}}"></youtube-video>
+			<p>{{video.title}}.</p>
 		</div>
 </div>

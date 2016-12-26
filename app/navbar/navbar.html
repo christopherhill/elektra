@@ -1,6 +1,6 @@
-<nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
+<nav class="navbar navbar-fixed-top bg-faded">
   <a class="navbar-brand" href="#">Elektra</a>
-  <ul class="nav navbar-nav">
+  <!--<ul class="nav navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
     </li>
@@ -10,17 +10,43 @@
     <li class="nav-item">
       <a class="nav-link" href="#">Link</a>
     </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="http://example.com" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-      <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </li>
-  </ul>
+  </ul>-->
+
   <form class="form-inline float-xs-right">
-    <input name="search" (ngModelChange)="onChange($event)" [ngModel]="searchModel" class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
+    <input name="composer"
+        placeholder="Composer"
+        [(ngModel)]="selectedComposer"
+        [typeahead]="composers"
+        [typeaheadOptionField]="'name'"
+        (typeaheadOnSelect)="onChange($event)"
+        class="form-control">
+    <input name="conductor"
+        placeholder="Conductor"
+        [(ngModel)]="selectedConductor"
+        [typeahead]="conductors"
+        [typeaheadOptionField]="'name'"
+        (typeaheadOnSelect)="onChange($event)"
+        class="form-control">
+    <input name="artist"
+        placeholder="Artist"
+        [(ngModel)]="selectedArtist"
+        [typeahead]="artists"
+        [typeaheadOptionField]="'name'"
+        (typeaheadOnSelect)="onChange($event)"
+        class="form-control">
+    <input name="orchestra"
+        placeholder="Orchestra"
+        [(ngModel)]="selectedOrchestra"
+        [typeahead]="orchestras"
+        [typeaheadOptionField]="'name'"
+        (typeaheadOnSelect)="onChange($event)"
+        class="form-control">
+    <input name="search"
+        placeholder="Other"
+        (ngModelChange)="searchChange($event)"
+        [ngModel]="searchModel"
+        class="form-control">
+
+    <!--<input name="search" (ngModelChange)="onChange($event)" [ngModel]="searchModel" class="form-control" type="text" placeholder="Search">-->
   </form>
 </nav>
