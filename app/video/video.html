@@ -1,7 +1,8 @@
-<br><br>
-
-<div class="fluffy-header">
-  <div *ngFor="let video of videos">
-    <youtube-video videoId="{{video.id}}"></youtube-video>
-  </div>
+<br><br><br>
+<h2>Results for {{search}}</h2>
+<div class="container-fluid">
+		<div class="col-md-6" *ngFor="let id of videos">
+			<youtube-video videoId="{{id}}"></youtube-video>
+			<p>Searching for {{search}}.</p>
+		</div>
 </div>

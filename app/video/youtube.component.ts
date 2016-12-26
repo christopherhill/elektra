@@ -5,9 +5,26 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'youtube-video',
+  styles: [`
+    .youtube-video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+    .youtube-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  `],
   template: `
-    <iframe width="560" height="315" [src]="uri" frameborder="0" allowfullscreen></iframe>
-  `
+    <div class="youtube-video-wrapper">
+      <iframe class="youtube-video" [src]="uri | safeUrl" frameborder="0" allowfullscreen></iframe>
+    </div>
+  `,
 })
 
 export class YouTubeVideoComponent {
@@ -26,7 +43,7 @@ export class YouTubeVideoComponent {
   
   getEmbedCode(id) {
     console.log('embed code: ', id);
-    return this.sanitizer.bypassSecurityTrustUrl(`https://www.youtube.com/embed/${id}`);
+    return `https://www.youtube.com/embed/${id}`;
   }
 
 }
